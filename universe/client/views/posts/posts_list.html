@@ -1,0 +1,15 @@
+<template name="postsList">
+  {{> postSubmit}}
+  <div class="posts">
+    {{#each postsWithRank}}
+      {{> postItem}}
+    {{/each}}
+    {{#if nextPath}}
+      <a href="{{nextPath}}">Load More</a>
+    {{else}}
+      {{#unless ready}}
+        Loading
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>
